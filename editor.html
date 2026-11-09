@@ -16,26 +16,27 @@
         h2 {
             color: #e08b91;
             margin-bottom: 5px;
+            font-size: 22px;
         }
         p {
             color: #777;
-            font-size: 14px;
+            font-size: 13px;
         }
         .editor-container {
-            max-width: 400px;
+            max-width: 420px;
             margin: 20px auto;
             background: #ffffff;
             padding: 25px;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        /* アクリルキーホルダーの形を模したプレビュー枠 */
+        /* アクリルキーホルダー風のプレビュー枠 */
         .preview-frame {
-            width: 220px;
-            height: 220px;
-            margin: 20px auto;
+            width: 200px;
+            height: 200px;
+            margin: 15px auto;
             border: 6px solid #e08b91;
-            border-radius: 50%; /* 丸型アクキー風 */
+            border-radius: 50%;
             overflow: hidden;
             background-color: #f5f5f5;
             display: flex;
@@ -55,6 +56,21 @@
             padding: 20px;
             line-height: 1.4;
         }
+        /* プレビュー内のテキスト表示部分 */
+        .preview-text-overlay {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            min-height: 40px;
+        }
+        .preview-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+        .preview-date {
+            font-size: 12px;
+            color: #888;
+        }
         .input-group {
             margin: 15px 0;
             text-align: left;
@@ -66,10 +82,17 @@
             margin-bottom: 5px;
             font-weight: bold;
         }
-        input[type="file"] {
+        input[type="file"], input[type="text"] {
             width: 100%;
             font-size: 14px;
-            padding: 5px 0;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+        input[type="text"]:focus {
+            border-color: #e08b91;
         }
         .btn-cart {
             background-color: #e08b91;
@@ -104,17 +127,35 @@
 
     <div class="editor-container">
         <h2>アクリルキーホルダー</h2>
-        <p>お気に入りの写真を選んでプレビューを確認！</p>
+        <p>写真を選んで、お名前や記念日を入力してみよう！</p>
 
         <!-- プレビュー表示エリア -->
         <div class="preview-frame" id="previewArea">
             <span class="placeholder-text">ここに写真が<br>表示されます</span>
         </div>
 
-        <!-- 写真選択ボタン -->
+        <!-- プレビュー連動のテキストエリア -->
+        <div class="preview-text-overlay">
+            <div class="preview-name" id="displayName">お名前（例：Sora）</div>
+            <div class="preview-date" id="displayDate">2026.01.01</div>
+        </div>
+
+        <!-- 写真選択 -->
         <div class="input-group">
-            <label>お写真の選択</label>
+            <label>📷 お写真の選択</label>
             <input type="file" id="imageInput" accept="image/*">
+        </div>
+
+        <!-- お名前入力 -->
+        <div class="input-group">
+            <label>✏️ お名前（お子様のお名前など）</label>
+            <input type="text" id="nameInput" placeholder="例：Sora または そら" value="Sora">
+        </div>
+
+        <!-- 記念日・生年月日入力 -->
+        <div class="input-group">
+            <label>📅 生年月日・記念日</label>
+            <input type="text" id="dateInput" placeholder="例：2026.10.15" value="2026.10.15">
         </div>
 
         <button class="btn-cart" onclick="alert('ご試用ありがとうございます！※デモ画面のため実際のカート機能は準備中です。')">カートに入れる</button>
@@ -125,7 +166,12 @@
     <script>
         const imageInput = document.getElementById('imageInput');
         const previewArea = document.getElementById('previewArea');
+        const nameInput = document.getElementById('nameInput');
+        const dateInput = document.getElementById('dateInput');
+        const displayName = document.getElementById('displayName');
+        const displayDate = document.getElementById('displayDate');
 
+        // 写真のプレビュー切り替え
         imageInput.addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
@@ -135,6 +181,16 @@
                 }
                 reader.readAsDataURL(file);
             }
+        });
+
+        // お名前のリアルタイム連動
+        nameInput.addEventListener('input', function() {
+            displayName.textContent = nameInput.value ? nameInput.value : 'お名前';
+        });
+
+        // 日付のリアルタイム連動
+        dateInput.addEventListener('input', function() {
+            displayDate.textContent = dateInput.value ? dateInput.value : '';
         });
     </script>
 
