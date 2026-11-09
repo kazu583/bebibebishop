@@ -89,7 +89,7 @@
             color: #666;
             line-height: 1.5;
         }
-        /* ご注文の流れ（ステップ） */
+        /* ご注文の流れ */
         .steps {
             display: flex;
             justify-content: space-between;
@@ -100,10 +100,9 @@
             background: white;
             border-radius: 12px;
             padding: 20px;
-            width: 200px;
+            width: 190px;
             text-align: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            position: relative;
         }
         .step-number {
             display: inline-block;
@@ -128,7 +127,39 @@
             line-height: 1.4;
             margin: 0;
         }
-        /* 商品カード */
+        /* お客様の声（レビュー）セクション（新規追加！） */
+        .reviews {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .review-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 260px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            text-align: left;
+        }
+        .review-star {
+            color: #f39c12;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .review-text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .review-author {
+            font-size: 12px;
+            color: #888;
+            font-weight: bold;
+            text-align: right;
+        }
+        /* 商品ラインナップ */
         .products {
             display: flex;
             justify-content: center;
@@ -176,7 +207,7 @@
         <a href="editor.html" class="btn">さっそく作ってみる（無料）</a>
     </div>
 
-    <!-- ご注文の流れセクション（新規追加！） -->
+    <!-- ご注文の流れ -->
     <div class="section">
         <h2 class="section-title">ご注文の流れ</h2>
         <div class="steps">
@@ -199,6 +230,31 @@
                 <span class="step-number">4</span>
                 <h3>ご自宅へお届け</h3>
                 <p>大切な記念グッズを丁寧にお作りしてご自宅へお届けします。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- お客様の声セクション（新規追加！） -->
+    <div class="section">
+        <h2 class="section-title">お客様の声</h2>
+        <div class="reviews">
+            <div class="review-card">
+                <div class="review-star">★★★★★</div>
+                <p class="review-text">「離れて暮らす両親に孫のキーホルダーをプレゼントしたら、毎日カギにつけて大喜びしていました！名前と日付も入って特別感があります。」</p>
+                <div class="review-author">（東京都・M様ママ）</div>
+            </div>
+            <div class="review-card">
+                <div class="review-star">★★★★★</div>
+                <p class="review-text">「スマホケースの裏に入れています。操作がとっても簡単で、注文までサクサク進められたのも良かったです。またリピートします！」</p>
+                <div class="review-author">（千葉県・K様パパ）</div>
+            </div>
+            <div class="review-card">
+                <div class="review-star">★★★★★</div>
+                <p class="review-text">「耐水ステッカーを水筒に貼りました。子供も自分の名前と可愛い写真がついているのですごく気に入っています！」</p>
+                <div class="review-card-content">
+                    <p class="review-text">「耐水ステッカーを水筒に貼りました。子供も自分の名前と可愛い写真がついているのですごく気に入っています！」</p>
+                </div>
+                <div class="review-author">（埼玉県・T様ママ）</div>
             </div>
         </div>
     </div>
