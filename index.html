@@ -83,47 +83,133 @@
             color: #555;
         }
         .section {
-            max-width: 900px;
+            max-width: 960px;
             margin: 50px auto;
             padding: 0 20px;
         }
+        .section-tag {
+            font-size: 11px;
+            color: #888;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
         .section-title {
-            text-align: center;
+            text-align: left;
             font-size: 22px;
             color: #4a4a4a;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .section-subtitle {
-            text-align: center;
+            text-align: left;
             font-size: 13px;
-            color: #888;
-            margin-bottom: 30px;
+            color: #777;
+            margin-bottom: 25px;
         }
-        /* 完成サンプル・作例ギャラリー */
-        .gallery-grid {
+        
+        /* しまうまプラス風 商品グリッド（3カラム） */
+        .items-grid {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             gap: 20px;
             flex-wrap: wrap;
         }
-        .gallery-card {
+        .item-card {
             background: white;
             border-radius: 12px;
-            width: 260px;
+            width: 300px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.04);
             text-align: left;
+            transition: transform 0.2s;
         }
-        .gallery-img-box {
+        .item-card:hover {
+            transform: translateY(-3px);
+        }
+        .item-img-placeholder {
             height: 180px;
             background: #f4eaebe8;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #d07a80;
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 1px solid #fae8eb;
+        }
+        .item-info {
+            padding: 18px;
+        }
+        .item-info h3 {
+            margin: 0 0 8px 0;
+            font-size: 17px;
+            color: #4a4a4a;
+        }
+        .item-price-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .item-price {
+            color: #e08b91;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .item-price span {
+            font-size: 12px;
+            color: #888;
+            font-weight: normal;
+        }
+        .item-desc {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .item-btn {
+            display: block;
+            text-align: center;
+            background-color: #fff;
+            color: #e08b91;
+            border: 2px solid #e08b91;
+            padding: 8px 0;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .item-btn:hover {
+            background-color: #e08b91;
+            color: white;
+        }
+
+        /* 完成サンプル・作例ギャラリー */
+        .gallery-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery-card {
+            background: white;
+            border-radius: 12px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            text-align: left;
+        }
+        .gallery-img-box {
+            height: 160px;
+            background: #faf2f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d07a80;
             font-size: 13px;
             font-weight: bold;
-            position: relative;
         }
         .gallery-content {
             padding: 15px;
@@ -139,42 +225,7 @@
             color: #666;
             line-height: 1.4;
         }
-        /* 商品ラインナップ */
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            width: 280px;
-            padding: 25px 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .product-card h3 {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #4a4a4a;
-        }
-        .price {
-            color: #e08b91;
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        .spec-text {
-            font-size: 12px;
-            color: #888;
-            margin-top: 15px;
-            text-align: left;
-            background: #faf8f8;
-            padding: 10px;
-            border-radius: 6px;
-            line-height: 1.5;
-        }
+
         /* ご注文の流れ */
         .steps {
             display: flex;
@@ -186,7 +237,7 @@
             background: white;
             border-radius: 12px;
             padding: 20px;
-            width: 190px;
+            width: 205px;
             text-align: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
@@ -213,6 +264,7 @@
             line-height: 1.4;
             margin: 0;
         }
+
         /* お客様の声 */
         .reviews {
             display: flex;
@@ -224,7 +276,7 @@
             background: white;
             border-radius: 12px;
             padding: 20px;
-            width: 260px;
+            width: 280px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
             text-align: left;
         }
@@ -245,6 +297,33 @@
             font-weight: bold;
             text-align: right;
         }
+
+        /* FAQ */
+        .faq-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: bold;
+            color: #4a4a4a;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
         /* 安心ポリシー */
         .security-box {
             background: #fff8f8;
@@ -280,31 +359,7 @@
             position: absolute;
             left: 0;
         }
-        /* FAQ */
-        .faq-container {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-        .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
-        }
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        .faq-q {
-            font-weight: bold;
-            color: #4a4a4a;
-            font-size: 14px;
-            margin-bottom: 6px;
-        }
-        .faq-a {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.5;
-        }
+
         footer {
             background-color: #f5f0f0;
             text-align: center;
@@ -321,7 +376,7 @@
         <h1>べびべび</h1>
     </header>
 
-    <!-- メインビジュアル（ヒーローバナー） -->
+    <!-- メインバナー -->
     <div class="hero-banner">
         <h2>スマホの写真が、とっておきの宝物に。</h2>
         <p>1個から作れる、赤ちゃんの写真専用オリジナルグッズ</p>
@@ -334,30 +389,79 @@
         <span class="news-text">【期間限定】お名前入れ無料キャンペーン実施中！祖父母へのギフトラッピングも対応開始しました。</span>
     </div>
 
-    <!-- 完成サンプル・作例ギャラリー（新規追加！） -->
+    <!-- 人気アイテム（しまうまプラス風レイアウト） -->
     <div class="section">
+        <div class="section-tag">POPULAR</div>
+        <h2 class="section-title">人気アイテム</h2>
+        <p class="section-subtitle">はじめての方にもおすすめ。</p>
+        
+        <div class="items-grid">
+            <!-- アクスタ -->
+            <div class="item-card">
+                <div class="item-img-placeholder"> stand photo</div>
+                <div class="item-info">
+                    <h3>アクリルスタンド</h3>
+                    <div class="item-price-row">
+                        <span class="item-price">1個 ¥600〜 <span>(税込)</span></span>
+                    </div>
+                    <p class="item-desc">お気に入りの写真を切り抜いて作れる！お部屋に飾れるアクリルスタンド。</p>
+                    <a href="editor.html" class="item-btn">作る・詳細を見る →</a>
+                </div>
+            </div>
+
+            <!-- アクキー -->
+            <div class="item-card">
+                <div class="item-img-placeholder"> keychain photo</div>
+                <div class="item-info">
+                    <h3>アクリルキーホルダー</h3>
+                    <div class="item-price-row">
+                        <span class="item-price">1個 ¥660〜 <span>(税込)</span></span>
+                    </div>
+                    <p class="item-desc">自由切り抜きで作るキーホルダー♪お名前や記念日も入れられます。</p>
+                    <a href="editor.html" class="item-btn">作る・詳細を見る →</a>
+                </div>
+            </div>
+
+            <!-- ステッカー -->
+            <div class="item-card">
+                <div class="item-img-placeholder"> sticker photo</div>
+                <div class="item-info">
+                    <h3>カットステッカー</h3>
+                    <div class="item-price-row">
+                        <span class="item-price">1個 ¥330〜 <span>(税込)</span></span>
+                    </div>
+                    <p class="item-desc">画像の形に沿ったシルエットのステッカー！水筒やスマホケースに。</p>
+                    <a href="editor.html" class="item-btn">作る・詳細を見る →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作例ギャラリー -->
+    <div class="section">
+        <div class="section-tag">GALLERY</div>
         <h2 class="section-title">作例ギャラリー</h2>
-        <p class="section-subtitle">先輩ママ・パパが作った、かわいいグッズたちをご紹介</p>
+        <p class="section-subtitle">先輩ママ・パパが作った、かわいいグッズたち</p>
         <div class="gallery-grid">
             <div class="gallery-card">
-                <div class="gallery-img-box">✨ 丸型アクキー（Sora / 2026.10）</div>
+                <div class="gallery-img-box">✨ お出かけアクキー</div>
                 <div class="gallery-content">
-                    <h4>お出かけ用キーホルダー</h4>
-                    <p>車のカギに付けて毎日癒やされています。お名前と日付入りで特別感バツグン！</p>
+                    <h4>キーホルダー</h4>
+                    <p>車のカギに付けて毎日癒やされています。名前入りで特別感バツグン！</p>
                 </div>
             </div>
             <div class="gallery-card">
-                <div class="gallery-img-box">🌸 星型アクキー（Luna / 2026.05）</div>
+                <div class="gallery-img-box">🌸 祖父母へのギフト</div>
                 <div class="gallery-content">
-                    <h4>じいじ・ばあばへのプレゼント</h4>
-                    <p>敬老の日に実家の両親へプレゼント。スマホにつけて自慢してくれています。</p>
+                    <h4>アクリルスタンド</h4>
+                    <p>敬老の日に実家の両親へプレゼント。リビングに飾って大喜びされました。</p>
                 </div>
             </div>
             <div class="gallery-card">
-                <div class="gallery-img-box">💧 耐水ステッカー（お名前入り）</div>
+                <div class="gallery-img-box">💧 保育園の持ち物に</div>
                 <div class="gallery-content">
-                    <h4>保育園グッズの目印に</h4>
-                    <p>水筒やマグに貼っても全然剥がれなくて可愛い！持ち物の目印に大活躍です。</p>
+                    <h4>耐水カットステッカー</h4>
+                    <p>水筒に貼っても全然剥がれなくて可愛い！持ち物の目印に大活躍です。</p>
                 </div>
             </div>
         </div>
@@ -365,81 +469,52 @@
 
     <!-- ご注文の流れ -->
     <div class="section">
+        <div class="section-tag">FLOW</div>
         <h2 class="section-title">ご注文の流れ</h2>
         <p class="section-subtitle">スマホからたったの4ステップで簡単にオーダーできます</p>
         <div class="steps">
             <div class="step-card">
                 <span class="step-number">1</span>
                 <h3>写真を選ぶ</h3>
-                <p>スマホのカメラロールからお気に入りの1枚を選択します。</p>
+                <p>スマホからお気に入りの1枚を選択します。</p>
             </div>
             <div class="step-card">
                 <span class="step-number">2</span>
                 <h3>形と文字を入れる</h3>
-                <p>丸型や星型を選び、お名前や記念日を入力してプレビュー確認。</p>
+                <p>丸型や星型を選び、お名前や記念日を入力。</p>
             </div>
             <div class="step-card">
                 <span class="step-number">3</span>
                 <h3>カートに進む</h3>
-                <p>お好みのグッズを確認して、安全な決済へ進みます。</p>
+                <p>お好みのグッズを確認して安全な決済へ。</p>
             </div>
             <div class="step-card">
                 <span class="step-number">4</span>
                 <h3>ご自宅へお届け</h3>
-                <p>大切な記念グッズを丁寧にお作りしてご自宅にお届けします。</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 商品ラインナップ ＆ スペック -->
-    <div class="section">
-        <h2 class="section-title">商品ラインナップ・仕様</h2>
-        <p class="section-subtitle">こだわり抜いた高品質な素材でお届けします</p>
-        <div class="products">
-            <div class="product-card">
-                <h3>アクリルキーホルダー</h3>
-                <p class="price">¥660 <span style="font-size:13px; color:#888;">(税込)</span></p>
-                <p style="font-size: 13px; color: #666;">お気に入りのポーズを切り抜いて作る、いつも一緒のお出かけ相棒。</p>
-                <div class="spec-text">
-                    <strong>【仕様】</strong><br>
-                    ・サイズ：約 5cm × 5cm<br>
-                    ・厚み：しっかり丈夫な 3mm厚<br>
-                    ・選べる形：丸型 / 四角型 / 星型
-                </div>
-                <a href="editor.html" class="btn-main" style="padding: 10px 20px; font-size: 14px; margin-top: 15px; display:inline-block;">作ってみる</a>
-            </div>
-            <div class="product-card">
-                <h3>耐水カットステッカー</h3>
-                <p class="price">¥330 <span style="font-size:13px; color:#888;">(税込)</span></p>
-                <p style="font-size: 13px; color: #666;">水に強く剥がれにくい！スマホケースや持ち物の目印にぴったり。</p>
-                <div class="spec-text">
-                    <strong>【仕様】</strong><br>
-                    ・素材：耐水・UVカット塩ビ<br>
-                    ・特徴：水筒やスマホに貼っても剥がれにくい強粘着
-                </div>
-                <a href="editor.html" class="btn-main" style="padding: 10px 20px; font-size: 14px; margin-top: 15px; display:inline-block;">作ってみる</a>
+                <p>丁寧にお作りしてご自宅にお届けします。</p>
             </div>
         </div>
     </div>
 
     <!-- お客様の声 -->
     <div class="section">
+        <div class="section-tag">VOICE</div>
         <h2 class="section-title">お客様の声</h2>
         <p class="section-subtitle">ご利用いただいたお客様からの温かいメッセージ</p>
         <div class="reviews">
             <div class="review-card">
                 <div class="review-star">★★★★★</div>
-                <p class="review-text">「離れて暮らす両親に孫のキーホルダーをプレゼントしたら、毎日カギにつけて大喜びしていました！形も選べて特別感があります。」</p>
+                <p class="review-text">「両親に孫のキーホルダーをプレゼントしたら毎日カギにつけて大喜びしていました！」</p>
                 <div class="review-author">（東京都・M様ママ）</div>
             </div>
             <div class="review-card">
                 <div class="review-star">★★★★★</div>
-                <p class="review-text">「スマホケースの裏に入れています。操作がとっても簡単で、注文までサクサク進められたのも良かったです。またリピートします！」</p>
+                <p class="review-text">「スマホケースの裏に入れています。操作が簡単でサクサク進められました！」</p>
                 <div class="review-author">（千葉県・K様パパ）</div>
             </div>
             <div class="review-card">
                 <div class="review-star">★★★★★</div>
-                <p class="review-text">“耐水ステッカーを水筒に貼りました。子供も自分の名前と可愛い写真がついているのですぐ気に入っています！”</p>
+                <p class="review-text">「耐水ステッカーを水筒に貼りました。子供も自分の名前と写真ですごく気に入っています！」</p>
                 <div class="review-author">（埼玉県・T様ママ）</div>
             </div>
         </div>
@@ -447,16 +522,17 @@
 
     <!-- よくある質問（FAQ） -->
     <div class="section">
-        <h2 class="section-title">よくある質問（FAQ）</h2>
-        <p class="section-subtitle">お客様から寄せられるご質問にお答えします</p>
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">よくある質問</h2>
+        <p class="section-subtitle">お客様から寄せられるご質問</p>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-q">Q. スマホの写真でも綺麗に作れますか？</div>
-                <div class="faq-a">A. はい、スマートフォンで撮影したお写真で十分綺麗にお作りいただけます。特別なアプリ不要でそのままアップロード可能です。</div>
+                <div class="faq-a">A. はい、スマートフォンで撮影したお写真で十分綺麗にお作りいただけます。</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Q. 祖父母へのプレゼントとして、別の住所に送ることはできますか？</div>
-                <div class="faq-a">A. はい、ご注文時にご自宅とは別のお届け先ご住所をご指定いただけます。ギフト用のラッピングにも対応しております。</div>
+                <div class="faq-q">Q. 別住所（実家など）に送ることはできますか？</div>
+                <div class="faq-a">A. はい、ご注文時にご自宅とは別のお届け先ご住所をご指定いただけます。</div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Q. 注文してから何日くらいで届きますか？</div>
@@ -472,7 +548,7 @@
             <ul class="security-list">
                 <li><strong>厳重なデータ管理:</strong> ご家族の大切なお写真は、商品の製造・発送目的以外には一切使用いたしません。</li>
                 <li><strong>自動データ消去:</strong> アップロードされた画像データは、製造完了後、厳重な管理のもと一定期間でサーバーから完全に消去されます。</li>
-                <li><strong>ギフト対応・直送OK:</strong> ご自宅用はもちろん、離れて暮らすおじいちゃん・おばあちゃんへのプレゼント（直送）にも安心してご利用いただけます。</li>
+                <li><strong>ギフト対応・直送OK:</strong> ご自宅用はもちろん、離れて暮らすおじいちゃん・おばあちゃんへのプレゼントにも安心してご利用いただけます。</li>
             </ul>
         </div>
     </div>
