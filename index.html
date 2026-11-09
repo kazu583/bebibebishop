@@ -159,7 +159,7 @@
             font-weight: bold;
             text-align: right;
         }
-        /* 安心・安全プライバシー宣言セクション（新規追加！） */
+        /* 安心ポリシー */
         .security-box {
             background: #fff8f8;
             border: 2px dashed #e08b91;
@@ -194,6 +194,31 @@
             position: absolute;
             left: 0;
         }
+        /* よくある質問（FAQ）アコーディオン風 */
+        .faq-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: bold;
+            color: #4a4a4a;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
         /* 商品ラインナップ */
         .products {
             display: flex;
@@ -219,6 +244,15 @@
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 15px;
+        }
+        .spec-text {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+            text-align: left;
+            background: #faf8f8;
+            padding: 8px;
+            border-radius: 6px;
         }
         footer {
             background-color: #f5f0f0;
@@ -253,18 +287,48 @@
             </div>
             <div class="step-card">
                 <span class="step-number">2</span>
-                <h3>文字を入れる</h3>
-                <p>お子様のお名前や記念日を入力して、プレビューで確認します。</p>
+                <h3>形と文字を入れる</h3>
+                <p>丸型や星型を選び、お名前や記念日を入力して確認します。</p>
             </div>
             <div class="step-card">
                 <span class="step-number">3</span>
-                <h3>カートに入れる</h3>
-                <p>お好みのグッズや形を選んで、注文手続きに進みます。</p>
+                <h3>カートに進む</h3>
+                <p>お好みのグッズを確認して、安全な決済へ進みます。</p>
             </div>
             <div class="step-card">
                 <span class="step-number">4</span>
                 <h3>ご自宅へお届け</h3>
-                <p>大切な記念グッズを丁寧にお作りしてご自宅へお届けします。</p>
+                <p>大切な記念グッズを丁寧にお作りしてご自宅にお届けします。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 商品ラインナップ ＆ スペック解説 -->
+    <div class="section">
+        <h2 class="section-title">商品ラインナップ・仕様</h2>
+        <div class="products">
+            <div class="product-card">
+                <h3>アクリルキーホルダー</h3>
+                <p class="price">¥660〜（税込）</p>
+                <p style="font-size: 13px; color: #666;">お気に入りのポーズを切り抜いて作る、いつも一緒のお出かけ相棒。</p>
+                <div class="spec-text">
+                    <strong>【仕様】</strong><br>
+                    ・サイズ：約 5cm × 5cm<br>
+                    ・厚み：しっかり丈夫な 3mm厚<br>
+                    ・選べる形：丸型 / 四角型 / 星型
+                </div>
+                <a href="editor.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: 15px;">作ってみる</a>
+            </div>
+            <div class="product-card">
+                <h3>耐水カットステッカー</h3>
+                <p class="price">¥330〜（税込）</p>
+                <p style="font-size: 13px; color: #666;">水に強く剥がれにくい！スマホケースや持ち物の目印にぴったり。</p>
+                <div class="spec-text">
+                    <strong>【仕様】</strong><br>
+                    ・素材：耐水・UVカット塩ビ<br>
+                    ・特徴：水筒やスマホに貼っても剥がれにくい強粘着
+                </div>
+                <a href="editor.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: 15px;">作ってみる</a>
             </div>
         </div>
     </div>
@@ -275,7 +339,7 @@
         <div class="reviews">
             <div class="review-card">
                 <div class="review-star">★★★★★</div>
-                <p class="review-text">「離れて暮らす両親に孫のキーホルダーをプレゼントしたら、毎日カギにつけて大喜びしていました！名前と日付も入って特別感があります。」</p>
+                <p class="review-text">「離れて暮らす両親に孫のキーホルダーをプレゼントしたら、毎日カギにつけて大喜びしていました！形も選べて特別感があります。」</p>
                 <div class="review-author">（東京都・M様ママ）</div>
             </div>
             <div class="review-card">
@@ -291,7 +355,26 @@
         </div>
     </div>
 
-    <!-- 安心・安全プライバシー宣言セクション（新規追加！） -->
+    <!-- よくある質問（FAQ）セクション（新規追加！） -->
+    <div class="section">
+        <h2 class="section-title">よくある質問（FAQ）</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-q">Q. スマホの写真でも綺麗に作れますか？</div>
+                <div class="faq-a">A. はい、スマートフォンで撮影したお写真で十分綺麗にお作りいただけます。特別なアプリ不要でそのままアップロード可能です。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q. 祖父母へのプレゼントとして、別の住所に送ることはできますか？</div>
+                <div class="faq-a">A. はい、ご注文時にご自宅とは別のお届け先ご住所をご指定いただけます。ギフト用のラッピングにも対応しております。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q. 注文してから何日くらいで届きますか？</div>
+                <div class="faq-a">A. ご注文完了後、通常3〜5営業日以内に丁寧にお作りして発送いたします。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 安心・安全プライバシー宣言セクション -->
     <div class="section">
         <div class="security-box">
             <h3>🛡️ べびべびの安心・安全へのこだわり</h3>
@@ -300,44 +383,6 @@
                 <li><strong>自動データ消去:</strong> アップロードされた画像データは、製造完了後、厳重な管理のもと一定期間でサーバーから完全に消去されます。</li>
                 <li><strong>ギフト対応・直送OK:</strong> ご自宅用はもちろん、離れて暮らすおじいちゃん・おばあちゃんへのプレゼント（直送）にも安心してご利用いただけます。</li>
             </ul>
-        </div>
-    </div>
-
-    <!-- 特徴セクション -->
-    <div class="section">
-        <h2 class="section-title">「べびべび」が選ばれる理由</h2>
-        <div class="features">
-            <div class="feature-box">
-                <h3>📷 スマホの写真でOK</h3>
-                <p>カメラロールからお気に入りの一枚を選ぶだけで、簡単にグッズのデザインが完成します。</p>
-            </div>
-            <div class="feature-box">
-                <h3>🛡️ 安心・安全の管理</h3>
-                <p>ご家族の写真プライバシーを最優先に保護。安全な環境で大切にお取り扱いします。</p>
-            </div>
-            <div class="feature-box">
-                <h3>🎁 家族や祖父母への贈り物に</h3>
-                <p>離れて暮らすおじいちゃん・おばあちゃんへ、成長をいつでも持ち歩ける最高のプレゼントに。</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 商品ラインナップセクション -->
-    <div class="section">
-        <h2 class="section-title">商品ラインナップ</h2>
-        <div class="products">
-            <div class="product-card">
-                <h3>アクリルキーホルダー</h3>
-                <p class="price">¥660〜（税込）</p>
-                <p style="font-size: 13px; color: #666;">お気に入りのポーズを切り抜いて作る、いつも一緒のお出かけ相棒。</p>
-                <a href="editor.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: 15px;">作ってみる</a>
-            </div>
-            <div class="product-card">
-                <h3>耐水カットステッカー</h3>
-                <p class="price">¥330〜（税込）</p>
-                <p style="font-size: 13px; color: #666;">水に強く剥がれにくい！スマホケースや持ち物の目印にぴったり。</p>
-                <a href="editor.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: 15px;">作ってみる</a>
-            </div>
         </div>
     </div>
 
