@@ -22,71 +22,157 @@
             color: #e08b91;
             margin: 0;
             font-size: 26px;
+            letter-spacing: 1px;
         }
-        .hero {
+        /* メインバナー（ヒーローエリア） */
+        .hero-banner {
             background: linear-gradient(135deg, #fdf6f6 0%, #f9f0f2 100%);
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
+            border-bottom: 1px solid #fae8eb;
         }
-        .hero h2 {
-            font-size: 24px;
+        .hero-banner h2 {
+            font-size: 26px;
             color: #4a4a4a;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
-        .hero p {
+        .hero-banner p {
             color: #777;
             font-size: 15px;
             margin-bottom: 25px;
         }
-        .btn {
+        .btn-main {
             display: inline-block;
             background-color: #e08b91;
             color: white;
-            padding: 15px 40px;
+            padding: 15px 45px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(224, 139, 145, 0.3);
+            box-shadow: 0 4px 12px rgba(224, 139, 145, 0.3);
             transition: 0.2s;
         }
-        .btn:hover {
+        .btn-main:hover {
             background-color: #d07a80;
+        }
+        /* お知らせ（News）バー */
+        .news-ticker {
+            background: #fff;
+            max-width: 800px;
+            margin: -20px auto 30px auto;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            position: relative;
+            z-index: 2;
+        }
+        .news-badge {
+            background: #e08b91;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+        .news-text {
+            color: #555;
         }
         .section {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
         .section-title {
             text-align: center;
-            font-size: 20px;
+            font-size: 22px;
             color: #4a4a4a;
-            margin-bottom: 30px;
-        }
-        /* 特徴ボックス */
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .feature-box {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            width: 260px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-        .feature-box h3 {
-            color: #e08b91;
-            font-size: 16px;
             margin-bottom: 10px;
         }
-        .feature-box p {
+        .section-subtitle {
+            text-align: center;
             font-size: 13px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        /* 完成サンプル・作例ギャラリー */
+        .gallery-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery-card {
+            background: white;
+            border-radius: 12px;
+            width: 260px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            text-align: left;
+        }
+        .gallery-img-box {
+            height: 180px;
+            background: #f4eaebe8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d07a80;
+            font-size: 13px;
+            font-weight: bold;
+            position: relative;
+        }
+        .gallery-content {
+            padding: 15px;
+        }
+        .gallery-content h4 {
+            margin: 0 0 5px 0;
+            font-size: 15px;
+            color: #4a4a4a;
+        }
+        .gallery-content p {
+            margin: 0;
+            font-size: 12px;
             color: #666;
+            line-height: 1.4;
+        }
+        /* 商品ラインナップ */
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            width: 280px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #4a4a4a;
+        }
+        .price {
+            color: #e08b91;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .spec-text {
+            font-size: 12px;
+            color: #888;
+            margin-top: 15px;
+            text-align: left;
+            background: #faf8f8;
+            padding: 10px;
+            border-radius: 6px;
             line-height: 1.5;
         }
         /* ご注文の流れ */
@@ -194,7 +280,7 @@
             position: absolute;
             left: 0;
         }
-        /* よくある質問（FAQ）アコーディオン風 */
+        /* FAQ */
         .faq-container {
             background: white;
             border-radius: 12px;
@@ -219,48 +305,13 @@
             color: #666;
             line-height: 1.5;
         }
-        /* 商品ラインナップ */
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            width: 280px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .product-card h3 {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #4a4a4a;
-        }
-        .price {
-            color: #e08b91;
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        .spec-text {
-            font-size: 12px;
-            color: #888;
-            margin-top: 10px;
-            text-align: left;
-            background: #faf8f8;
-            padding: 8px;
-            border-radius: 6px;
-        }
         footer {
             background-color: #f5f0f0;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 12px;
             color: #888;
-            margin-top: 50px;
+            margin-top: 60px;
         }
     </style>
 </head>
@@ -270,15 +321,52 @@
         <h1>べびべび</h1>
     </header>
 
-    <div class="hero">
+    <!-- メインビジュアル（ヒーローバナー） -->
+    <div class="hero-banner">
         <h2>スマホの写真が、とっておきの宝物に。</h2>
         <p>1個から作れる、赤ちゃんの写真専用オリジナルグッズ</p>
-        <a href="editor.html" class="btn">さっそく作ってみる（無料）</a>
+        <a href="editor.html" class="btn-main">さっそく作ってみる（無料）</a>
+    </div>
+
+    <!-- お知らせトピックス -->
+    <div class="news-ticker">
+        <span class="news-badge">NEWS</span>
+        <span class="news-text">【期間限定】お名前入れ無料キャンペーン実施中！祖父母へのギフトラッピングも対応開始しました。</span>
+    </div>
+
+    <!-- 完成サンプル・作例ギャラリー（新規追加！） -->
+    <div class="section">
+        <h2 class="section-title">作例ギャラリー</h2>
+        <p class="section-subtitle">先輩ママ・パパが作った、かわいいグッズたちをご紹介</p>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <div class="gallery-img-box">✨ 丸型アクキー（Sora / 2026.10）</div>
+                <div class="gallery-content">
+                    <h4>お出かけ用キーホルダー</h4>
+                    <p>車のカギに付けて毎日癒やされています。お名前と日付入りで特別感バツグン！</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-box">🌸 星型アクキー（Luna / 2026.05）</div>
+                <div class="gallery-content">
+                    <h4>じいじ・ばあばへのプレゼント</h4>
+                    <p>敬老の日に実家の両親へプレゼント。スマホにつけて自慢してくれています。</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-box">💧 耐水ステッカー（お名前入り）</div>
+                <div class="gallery-content">
+                    <h4>保育園グッズの目印に</h4>
+                    <p>水筒やマグに貼っても全然剥がれなくて可愛い！持ち物の目印に大活躍です。</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- ご注文の流れ -->
     <div class="section">
         <h2 class="section-title">ご注文の流れ</h2>
+        <p class="section-subtitle">スマホからたったの4ステップで簡単にオーダーできます</p>
         <div class="steps">
             <div class="step-card">
                 <span class="step-number">1</span>
@@ -288,7 +376,7 @@
             <div class="step-card">
                 <span class="step-number">2</span>
                 <h3>形と文字を入れる</h3>
-                <p>丸型や星型を選び、お名前や記念日を入力して確認します。</p>
+                <p>丸型や星型を選び、お名前や記念日を入力してプレビュー確認。</p>
             </div>
             <div class="step-card">
                 <span class="step-number">3</span>
@@ -303,13 +391,14 @@
         </div>
     </div>
 
-    <!-- 商品ラインナップ ＆ スペック解説 -->
+    <!-- 商品ラインナップ ＆ スペック -->
     <div class="section">
         <h2 class="section-title">商品ラインナップ・仕様</h2>
+        <p class="section-subtitle">こだわり抜いた高品質な素材でお届けします</p>
         <div class="products">
             <div class="product-card">
                 <h3>アクリルキーホルダー</h3>
-                <p class="price">¥660〜（税込）</p>
+                <p class="price">¥660 <span style="font-size:13px; color:#888;">(税込)</span></p>
                 <p style="font-size: 13px; color: #666;">お気に入りのポーズを切り抜いて作る、いつも一緒のお出かけ相棒。</p>
                 <div class="spec-text">
                     <strong>【仕様】</strong><br>
@@ -317,18 +406,18 @@
                     ・厚み：しっかり丈夫な 3mm厚<br>
                     ・選べる形：丸型 / 四角型 / 星型
                 </div>
-                <a href="editor.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: 15px;">作ってみる</a>
+                <a href="editor.html" class="btn-main" style="padding: 10px 20px; font-size: 14px; margin-top: 15px; display:inline-block;">作ってみる</a>
             </div>
             <div class="product-card">
                 <h3>耐水カットステッカー</h3>
-                <p class="price">¥330〜（税込）</p>
+                <p class="price">¥330 <span style="font-size:13px; color:#888;">(税込)</span></p>
                 <p style="font-size: 13px; color: #666;">水に強く剥がれにくい！スマホケースや持ち物の目印にぴったり。</p>
                 <div class="spec-text">
                     <strong>【仕様】</strong><br>
                     ・素材：耐水・UVカット塩ビ<br>
                     ・特徴：水筒やスマホに貼っても剥がれにくい強粘着
                 </div>
-                <a href="editor.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: 15px;">作ってみる</a>
+                <a href="editor.html" class="btn-main" style="padding: 10px 20px; font-size: 14px; margin-top: 15px; display:inline-block;">作ってみる</a>
             </div>
         </div>
     </div>
@@ -336,6 +425,7 @@
     <!-- お客様の声 -->
     <div class="section">
         <h2 class="section-title">お客様の声</h2>
+        <p class="section-subtitle">ご利用いただいたお客様からの温かいメッセージ</p>
         <div class="reviews">
             <div class="review-card">
                 <div class="review-star">★★★★★</div>
@@ -349,15 +439,16 @@
             </div>
             <div class="review-card">
                 <div class="review-star">★★★★★</div>
-                <p class="review-text">「耐水ステッカーを水筒に貼りました。子供も自分の名前と可愛い写真がついているのですごく気に入っています！」</p>
+                <p class="review-text">“耐水ステッカーを水筒に貼りました。子供も自分の名前と可愛い写真がついているのですぐ気に入っています！”</p>
                 <div class="review-author">（埼玉県・T様ママ）</div>
             </div>
         </div>
     </div>
 
-    <!-- よくある質問（FAQ）セクション（新規追加！） -->
+    <!-- よくある質問（FAQ） -->
     <div class="section">
         <h2 class="section-title">よくある質問（FAQ）</h2>
+        <p class="section-subtitle">お客様から寄せられるご質問にお答えします</p>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-q">Q. スマホの写真でも綺麗に作れますか？</div>
@@ -374,7 +465,7 @@
         </div>
     </div>
 
-    <!-- 安心・安全プライバシー宣言セクション -->
+    <!-- 安心・安全ポリシー -->
     <div class="section">
         <div class="security-box">
             <h3>🛡️ べびべびの安心・安全へのこだわり</h3>
