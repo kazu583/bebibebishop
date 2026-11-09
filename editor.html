@@ -15,12 +15,17 @@
         }
         h2 {
             color: #e08b91;
+            margin-bottom: 5px;
+        }
+        p {
+            color: #777;
+            font-size: 14px;
         }
         .editor-container {
             max-width: 400px;
-            margin: 0 auto;
+            margin: 20px auto;
             background: #ffffff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
@@ -46,11 +51,25 @@
         }
         .placeholder-text {
             color: #aaa;
-            font-size: 14px;
+            font-size: 13px;
             padding: 20px;
+            line-height: 1.4;
+        }
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
         input[type="file"] {
-            margin: 15px 0;
+            width: 100%;
+            font-size: 14px;
+            padding: 5px 0;
         }
         .btn-cart {
             background-color: #e08b91;
@@ -63,6 +82,8 @@
             cursor: pointer;
             width: 100%;
             margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(224, 139, 145, 0.3);
+            transition: 0.2s;
         }
         .btn-cart:hover {
             background-color: #d07a80;
@@ -74,23 +95,29 @@
             text-decoration: none;
             font-size: 14px;
         }
+        .back-link:hover {
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
     <div class="editor-container">
-        <h2>アクリルキーホルダー作成</h2>
-        <p>お子様の写真を選んでください</p>
+        <h2>アクリルキーホルダー</h2>
+        <p>お気に入りの写真を選んでプレビューを確認！</p>
 
         <!-- プレビュー表示エリア -->
         <div class="preview-frame" id="previewArea">
-            <span class="placeholder-text">ここに写真が表示されます</span>
+            <span class="placeholder-text">ここに写真が<br>表示されます</span>
         </div>
 
         <!-- 写真選択ボタン -->
-        <input type="file" id="imageInput" accept="image/*">
+        <div class="input-group">
+            <label>お写真の選択</label>
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
 
-        <button class="btn-cart" onclick="alert('カートに追加されました！（デモ）')">カートに入れる</button>
+        <button class="btn-cart" onclick="alert('ご試用ありがとうございます！※デモ画面のため実際のカート機能は準備中です。')">カートに入れる</button>
         
         <a href="index.html" class="back-link">← トップページに戻る</a>
     </div>
