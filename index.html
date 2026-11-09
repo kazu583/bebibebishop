@@ -3,140 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>グッズ編集・プレビュー - べびべび</title>
+    <title>べびべび | 赤ちゃんの写真で作る、たからもの</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: #fcfbfa;
             color: #4a4a4a;
             margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffffff;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        h2 {
+        h1 {
             color: #e08b91;
-            margin-bottom: 5px;
+            margin: 0;
+            font-size: 26px;
         }
-        p {
+        .hero {
+            background: linear-gradient(135deg, #fdf6f6 0%, #f9f0f2 100%);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 24px;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+        .hero p {
             color: #777;
-            font-size: 14px;
+            font-size: 15px;
+            margin-bottom: 25px;
         }
-        .editor-container {
-            max-width: 400px;
-            margin: 20px auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        /* アクリルキーホルダーの形を模したプレビュー枠 */
-        .preview-frame {
-            width: 220px;
-            height: 220px;
-            margin: 20px auto;
-            border: 6px solid #e08b91;
-            border-radius: 50%; /* 丸型アクキー風 */
-            overflow: hidden;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .preview-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .placeholder-text {
-            color: #aaa;
-            font-size: 13px;
-            padding: 20px;
-            line-height: 1.4;
-        }
-        .input-group {
-            margin: 15px 0;
-            text-align: left;
-        }
-        .input-group label {
-            display: block;
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="file"] {
-            width: 100%;
-            font-size: 14px;
-            padding: 5px 0;
-        }
-        .btn-cart {
+        .btn {
+            display: inline-block;
             background-color: #e08b91;
             color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 16px;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
             font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 15px;
             box-shadow: 0 4px 10px rgba(224, 139, 145, 0.3);
             transition: 0.2s;
         }
-        .btn-cart:hover {
+        .btn:hover {
             background-color: #d07a80;
         }
-        .back-link {
-            display: block;
-            margin-top: 20px;
-            color: #888;
-            text-decoration: none;
-            font-size: 14px;
+        .section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        .back-link:hover {
-            color: #555;
+        .section-title {
+            text-align: center;
+            font-size: 20px;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+        }
+        /* 特徴ボックス */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            width: 260px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .feature-box h3 {
+            color: #e08b91;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .feature-box p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+        /* ご注文の流れ（ステップ） */
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .step-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            position: relative;
+        }
+        .step-number {
+            display: inline-block;
+            background-color: #e08b91;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 14px;
+            line-height: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .step-card h3 {
+            font-size: 15px;
+            margin: 5px 0 10px;
+            color: #4a4a4a;
+        }
+        .step-card p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+            margin: 0;
+        }
+        /* 商品カード */
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            width: 280px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #4a4a4a;
+        }
+        .price {
+            color: #e08b91;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #f5f0f0;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #888;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
-    <div class="editor-container">
-        <h2>アクリルキーホルダー</h2>
-        <p>お気に入りの写真を選んでプレビューを確認！</p>
+    <header>
+        <h1>べびべび</h1>
+    </header>
 
-        <!-- プレビュー表示エリア -->
-        <div class="preview-frame" id="previewArea">
-            <span class="placeholder-text">ここに写真が<br>表示されます</span>
-        </div>
-
-        <!-- 写真選択ボタン -->
-        <div class="input-group">
-            <label>お写真の選択</label>
-            <input type="file" id="imageInput" accept="image/*">
-        </div>
-
-        <button class="btn-cart" onclick="alert('ご試用ありがとうございます！※デモ画面のため実際のカート機能は準備中です。')">カートに入れる</button>
-        
-        <a href="index.html" class="back-link">← トップページに戻る</a>
+    <div class="hero">
+        <h2>スマホの写真が、とっておきの宝物に。</h2>
+        <p>1個から作れる、赤ちゃんの写真専用オリジナルグッズ</p>
+        <a href="editor.html" class="btn">さっそく作ってみる（無料）</a>
     </div>
 
-    <script>
-        const imageInput = document.getElementById('imageInput');
-        const previewArea = document.getElementById('previewArea');
+    <!-- ご注文の流れセクション（新規追加！） -->
+    <div class="section">
+        <h2 class="section-title">ご注文の流れ</h2>
+        <div class="steps">
+            <div class="step-card">
+                <span class="step-number">1</span>
+                <h3>写真を選ぶ</h3>
+                <p>スマホのカメラロールからお気に入りの1枚を選択します。</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">2</span>
+                <h3>文字を入れる</h3>
+                <p>お子様のお名前や記念日を入力して、プレビューで確認します。</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">3</span>
+                <h3>カートに入れる</h3>
+                <p>お好みのグッズや形を選んで、注文手続きに進みます。</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">4</span>
+                <h3>ご自宅へお届け</h3>
+                <p>大切な記念グッズを丁寧にお作りしてご自宅へお届けします。</p>
+            </div>
+        </div>
+    </div>
 
-        imageInput.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    previewArea.innerHTML = `<img src="${e.target.result}" alt="プレビュー画像">`;
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+    <!-- 特徴セクション -->
+    <div class="section">
+        <h2 class="section-title">「べびべび」が選ばれる理由</h2>
+        <div class="features">
+            <div class="feature-box">
+                <h3>📷 スマホの写真でOK</h3>
+                <p>カメラロールからお気に入りの一枚を選ぶだけで、簡単にグッズのデザインが完成します。</p>
+            </div>
+            <div class="feature-box">
+                <h3>🛡️ 安心・安全の管理</h3>
+                <p>ご家族の写真プライバシーを最優先に保護。安全な環境で大切にお取り扱いします。</p>
+            </div>
+            <div class="feature-box">
+                <h3>🎁 家族や祖父母への贈り物に</h3>
+                <p>離れて暮らすおじいちゃん・おばあちゃんへ、成長をいつでも持ち歩ける最高のプレゼントに。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 商品ラインナップセクション -->
+    <div class="section">
+        <h2 class="section-title">商品ラインナップ</h2>
+        <div class="products">
+            <div class="product-card">
+                <h3>アクリルキーホルダー</h3>
+                <p class="price">¥660〜（税込）</p>
+                <p style="font-size: 13px; color: #666;">お気に入りのポーズを切り抜いて作る、いつも一緒のお出かけ相棒。</p>
+                <a href="editor.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: 15px;">作ってみる</a>
+            </div>
+            <div class="product-card">
+                <h3>耐水カットステッカー</h3>
+                <p class="price">¥330〜（税込）</p>
+                <p style="font-size: 13px; color: #666;">水に強く剥がれにくい！スマホケースや持ち物の目印にぴったり。</p>
+                <a href="editor.html" class="btn" style="padding: 8px 20px; font-size: 14px; margin-top: 15px;">作ってみる</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 べびべび All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
