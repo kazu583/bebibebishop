@@ -30,13 +30,36 @@
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        /* アクリルキーホルダー風のプレビュー枠 */
+        /* 形状選択ボタン */
+        .shape-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .shape-btn {
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #666;
+            transition: 0.2s;
+        }
+        .shape-btn.active {
+            background: #e08b91;
+            border-color: #e08b91;
+            color: white;
+        }
+        /* アクリルキーホルダー風のプレビュー枠（初期値：丸型） */
         .preview-frame {
             width: 200px;
             height: 200px;
             margin: 15px auto;
             border: 6px solid #e08b91;
-            border-radius: 50%;
+            border-radius: 50%; /* デフォルトは丸型 */
             overflow: hidden;
             background-color: #f5f5f5;
             display: flex;
@@ -44,6 +67,7 @@
             justify-content: center;
             position: relative;
             box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+            transition: border-radius 0.3s;
         }
         .preview-frame img {
             width: 100%;
@@ -56,7 +80,6 @@
             padding: 20px;
             line-height: 1.4;
         }
-        /* プレビュー内のテキスト表示部分 */
         .preview-text-overlay {
             margin-top: 5px;
             margin-bottom: 15px;
@@ -127,7 +150,14 @@
 
     <div class="editor-container">
         <h2>アクリルキーホルダー</h2>
-        <p>写真を選んで、お名前や記念日を入力してみよう！</p>
+        <p>形を選んで、写真と文字をプレビューしてみよう！</p>
+
+        <!-- 形状選択ボタン -->
+        <div class="shape-selector">
+            <button class="shape-btn active" onclick="changeShape('circle', this)">丸型</button>
+            <button class="shape-btn" onclick="changeShape('square', this)">四角型</button>
+            <button class="shape-btn" onclick="changeShape('star', this)">星型風</button>
+        </div>
 
         <!-- プレビュー表示エリア -->
         <div class="preview-frame" id="previewArea">
@@ -137,7 +167,7 @@
         <!-- プレビュー連動のテキストエリア -->
         <div class="preview-text-overlay">
             <div class="preview-name" id="displayName">お名前（例：Sora）</div>
-            <div class="preview-date" id="displayDate">2026.01.01</div>
+            <div class="preview-date" id="displayDate">2026.10.15</div>
         </div>
 
         <!-- 写真選択 -->
@@ -148,17 +178,17 @@
 
         <!-- お名前入力 -->
         <div class="input-group">
-            <label>✏️ お名前（お子様のお名前など）</label>
-            <input type="text" id="nameInput" placeholder="例：Sora または そら" value="Sora">
+            <label>✏️ お名前</label>
+            <input type="text" id="nameInput" placeholder="例：Sora" value="Sora">
         </div>
 
-        <!-- 記念日・生年月日入力 -->
+        <!-- 記念日入力 -->
         <div class="input-group">
             <label>📅 生年月日・記念日</label>
             <input type="text" id="dateInput" placeholder="例：2026.10.15" value="2026.10.15">
         </div>
 
-        <button class="btn-cart" onclick="alert('ご試用ありがとうございます！※デモ画面のため実際のカート機能は準備中です。')">カートに入れる</button>
+        <button class="btn-cart" onclick="alert('ご試用ありがとうございます！本番システム連携によりスムーズに決済・オーダーが可能になります。')">カートに入れる (¥660)</button>
         
         <a href="index.html" class="back-link">← トップページに戻る</a>
     </div>
@@ -171,7 +201,7 @@
         const displayName = document.getElementById('displayName');
         const displayDate = document.getElementById('displayDate');
 
-        // 写真のプレビュー切り替え
+        // 写真のプレビュー
         imageInput.addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
@@ -183,12 +213,26 @@
             }
         });
 
-        // お名前のリアルタイム連動
+        // 形状変更関数
+        function changeShape(shape, btn) {
+            // ボタンのアクティブ状態切り替え
+            document.querySelectorAll('.shape-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 枠の形を変更
+            if (shape === 'circle') {
+                previewArea.style.borderRadius = '50%';
+            } else if (shape === 'square') {
+                previewArea.style.borderRadius = '12px';
+            } else if (shape === 'star') {
+                previewArea.style.borderRadius = '30% 70% 70% 30% / 30% 30% 70% 70%';
+            }
+        }
+
+        // テキストリアルタイム連動
         nameInput.addEventListener('input', function() {
             displayName.textContent = nameInput.value ? nameInput.value : 'お名前';
         });
-
-        // 日付のリアルタイム連動
         dateInput.addEventListener('input', function() {
             displayDate.textContent = dateInput.value ? dateInput.value : '';
         });
