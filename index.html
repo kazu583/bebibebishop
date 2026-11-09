@@ -3,61 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>べびべび | 赤ちゃんの写真で作る、たからもの</title>
+    <title>グッズ編集・プレビュー - べびべび</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: #fcfbfa;
             color: #4a4a4a;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             text-align: center;
         }
-        header {
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        h1 {
+        h2 {
             color: #e08b91;
-            margin: 0;
-            font-size: 28px;
+            margin-bottom: 5px;
         }
-        .hero {
-            padding: 40px 20px;
+        p {
+            color: #777;
+            font-size: 14px;
         }
-        .hero h2 {
-            font-size: 22px;
-            color: #555;
-            margin-bottom: 20px;
+        .editor-container {
+            max-width: 400px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        .btn {
-            display: inline-block;
+        /* アクリルキーホルダーの形を模したプレビュー枠 */
+        .preview-frame {
+            width: 220px;
+            height: 220px;
+            margin: 20px auto;
+            border: 6px solid #e08b91;
+            border-radius: 50%; /* 丸型アクキー風 */
+            overflow: hidden;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .preview-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .placeholder-text {
+            color: #aaa;
+            font-size: 13px;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="file"] {
+            width: 100%;
+            font-size: 14px;
+            padding: 5px 0;
+        }
+        .btn-cart {
             background-color: #e08b91;
             color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 18px;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
             font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
             box-shadow: 0 4px 10px rgba(224, 139, 145, 0.3);
             transition: 0.2s;
         }
-        .btn:hover {
+        .btn-cart:hover {
             background-color: #d07a80;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>べびべび</h1>
-    </header>
+    <div class="editor-container">
+        <h2>アクリルキーホルダー</h2>
+        <p>お気に入りの写真を選んでプレビューを確認！</p>
 
-    <div class="hero">
-        <h2>スマホの写真が、とっておきの宝物に。<br>1個から作れるベビーグッズ</h2>
-        <a href="editor.html" class="btn">さっそく作ってみる（無料）</a>
+        <!-- プレビュー表示エリア -->
+        <div class="preview-frame" id="previewArea">
+            <span class="placeholder-text">ここに写真が<br>表示されます</span>
+        </div>
+
+        <!-- 写真選択ボタン -->
+        <div class="input-group">
+            <label>お写真の選択</label>
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+
+        <button class="btn-cart" onclick="alert('ご試用ありがとうございます！※デモ画面のため実際のカート機能は準備中です。')">カートに入れる</button>
+        
+        <a href="index.html" class="back-link">← トップページに戻る</a>
     </div>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const previewArea = document.getElementById('previewArea');
+
+        imageInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewArea.innerHTML = `<img src="${e.target.result}" alt="プレビュー画像">`;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 
 </body>
 </html>
