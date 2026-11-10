@@ -17,7 +17,7 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-bottom: 3px solid #f4c2c6; /* アクセントライン */
+            border-bottom: 3px solid #f4c2c6;
         }
         h1 {
             color: #d47a82;
@@ -25,25 +25,65 @@
             font-size: 28px;
             letter-spacing: 1.5px;
         }
+
+        /* ====== 水彩赤ちゃんイラスト自動切り抜きクラス（Bebies.jpeg対応版） ====== */
+        .baby-illust {
+            background-image: url('Bebies.jpeg');
+            background-repeat: no-repeat;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(212, 122, 130, 0.18);
+            border: 3px solid #ffffff;
+        }
+        /* ① お出迎え赤ちゃん（左上） */
+        .illust-welcome {
+            width: 140px;
+            height: 140px;
+            background-size: 460% auto;
+            background-position: 9% 6%;
+        }
+        /* ② 制作中赤ちゃん（中央上） */
+        .illust-making {
+            width: 120px;
+            height: 120px;
+            background-size: 460% auto;
+            background-position: 52% 6%;
+        }
+        /* ③ ギフト赤ちゃん（右上） */
+        .illust-gift {
+            width: 120px;
+            height: 120px;
+            background-size: 460% auto;
+            background-position: 93% 6%;
+        }
+        /* ④ おやすみ赤ちゃん（左下） */
+        .illust-sleep {
+            width: 130px;
+            height: 130px;
+            background-size: 420% auto;
+            background-position: 28% 82%;
+            flex-shrink: 0;
+        }
+        /* ⑤ バンザイ赤ちゃん（右下） */
+        .illust-banzai {
+            width: 110px;
+            height: 110px;
+            background-size: 460% auto;
+            background-position: 74% 82%;
+        }
+
         /* メインバナー（ヒーローエリア） */
         .hero-banner {
             background: linear-gradient(135deg, #fdf4f5 0%, #fae1e4 100%);
-            padding: 60px 20px 50px 20px;
+            padding: 50px 20px;
             text-align: center;
             border-bottom: 1px solid #f2d6d9;
-            position: relative;
-        }
-        /* お出迎え赤ちゃんのイラスト配置 */
-        .hero-illustration {
-            width: 130px;
-            height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.05));
         }
         .hero-banner h2 {
             font-size: 26px;
             color: #333;
-            margin: 10px 0;
+            margin: 15px 0 10px 0;
         }
         .hero-banner p {
             color: #666;
@@ -66,6 +106,7 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(212, 122, 130, 0.45);
         }
+
         /* お知らせバー */
         .news-ticker {
             background: #fff;
@@ -79,7 +120,7 @@
             font-size: 13px;
             position: relative;
             z-index: 2;
-            border-left: 4px solid #d47a82; /* アクセント */
+            border-left: 4px solid #d47a82;
         }
         .news-badge {
             background: #d47a82;
@@ -93,6 +134,7 @@
         .news-text {
             color: #555;
         }
+
         .section {
             max-width: 960px;
             margin: 60px auto;
@@ -139,7 +181,6 @@
         .item-card:hover {
             transform: translateY(-4px);
         }
-        /* 制作中赤ちゃんイラストなどを埋め込んだ画像枠 */
         .item-img-box {
             height: 190px;
             background: linear-gradient(135deg, #fff2f3 0%, #fae1e4 100%);
@@ -149,13 +190,8 @@
             justify-content: center;
             color: #b05860;
             font-weight: bold;
-            font-size: 14px;
-            position: relative;
-        }
-        .item-illustration {
-            width: 100px;
-            height: auto;
-            margin-bottom: 8px;
+            font-size: 13px;
+            gap: 8px;
         }
         .item-info {
             padding: 20px;
@@ -232,10 +268,9 @@
             font-size: 13px;
             font-weight: bold;
         }
-        .gallery-illustration {
-            width: 80px;
-            height: auto;
-            margin-bottom: 8px;
+        .gallery-img-box span {
+            font-size: 28px;
+            margin-bottom: 5px;
         }
         .gallery-content {
             padding: 18px;
@@ -353,7 +388,7 @@
             line-height: 1.6;
         }
 
-        /* 安心ポリシー（おやすみ赤ちゃんのイラストを配置） */
+        /* 安心ポリシー */
         .security-section {
             display: flex;
             background: linear-gradient(135deg, #fff5f5 0%, #fff9f9 100%);
@@ -363,14 +398,11 @@
             text-align: left;
             align-items: center;
             gap: 25px;
+            flex-wrap: wrap;
         }
         .security-box {
             flex: 1;
-        }
-        .security-illustration {
-            width: 140px;
-            height: auto;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.04));
+            min-width: 260px;
         }
         .security-box h3 {
             color: #d47a82;
@@ -408,12 +440,6 @@
             margin-top: 70px;
             border-top: 1px solid #e8dedf;
         }
-        .footer-illustration {
-            width: 80px;
-            height: auto;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
     </style>
 </head>
 <body>
@@ -422,38 +448,9 @@
         <h1>べびべび</h1>
     </header>
 
-    <!-- メインバナー（お出迎え赤ちゃんイラスト付き） -->
+    <!-- メインバナー（①お出迎え赤ちゃんの本物イラスト） -->
     <div class="hero-banner">
-        <!-- 💡 採用されたお出迎え赤ちゃんイラスト -->
-        <svg class="hero-illustration" viewBox="0 0 100 100" style="width:120px;height:120px;">
-            <!-- 優しくてかわいい赤ちゃんの仮グラフィック（仮のプレースホルダーとしてイラストの雰囲気を再現） -->
-            <circle cx="50" cy="45" r="28" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-            <!-- 髪の毛 -->
-            <path d="M 35 25 Q 43 18 52 23 Q 56 18 63 25" stroke="#8c6239" stroke-width="2" fill="none"/>
-            <path d="M 45 22 Q 49 16 52 20" stroke="#8c6239" stroke-width="1.5" fill="none"/>
-            <!-- 耳 -->
-            <circle cx="20" cy="48" r="7" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-            <circle cx="80" cy="48" r="7" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-            <!-- 目・口・ほっぺ -->
-            <circle cx="39" cy="44" r="2.5" fill="#5c4033"/>
-            <circle cx="61" cy="44" r="2.5" fill="#5c4033"/>
-            <ellipse cx="32" cy="49" rx="5" ry="3" fill="#f3a3b2" opacity="0.6"/>
-            <ellipse cx="68" cy="49" rx="5" ry="3" fill="#f3a3b2" opacity="0.6"/>
-            <path d="M 45 51 Q 50 56 55 51" stroke="#d47a82" stroke-width="2" fill="#fff"/>
-            <path d="M 48 53 Q 50 56 52 53" fill="#f3a3b2"/>
-            <!-- スタイ・よだれかけ -->
-            <path d="M 30 68 C 30 85, 70 85, 70 68 Z" fill="#fff" stroke="#d47a82" stroke-width="1.5"/>
-            <path d="M 38 68 C 38 78, 62 78, 62 68" stroke="#f4c2c6" stroke-width="1" fill="none"/>
-            <!-- 手を振るポーズ -->
-            <path d="M 72 45 Q 82 30 85 33 Q 86 38 77 48" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-            <circle cx="85" cy="31" r="2.5" fill="#fbe3e6"/>
-            <!-- 体 -->
-            <path d="M 30 68 Q 22 80 26 88 Q 50 93 74 88 Q 78 80 70 68" fill="#f5b3b9" stroke="#d47a82" stroke-width="1.5"/>
-            <circle cx="26" cy="85" r="5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1"/>
-            <circle cx="74" cy="85" r="5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1"/>
-            <!-- Welcome! テキスト -->
-            <text x="1" y="28" font-size="7.5" fill="#d47a82" font-weight="bold" transform="rotate(-10 10 30)">Welcome!</text>
-        </svg>
+        <div class="baby-illust illust-welcome"></div>
         <h2>スマホの写真が、とっておきの宝物に。</h2>
         <p>1個から作れる、赤ちゃんの写真専用オリジナルグッズ</p>
         <a href="editor.html" class="btn-main">さっそく作ってみる（無料）</a>
@@ -472,33 +469,11 @@
         <p class="section-subtitle">はじめての方にもおすすめ。</p>
         
         <div class="items-grid">
-            <!-- アクスタ（制作中赤ちゃん） -->
+            <!-- アクスタ（②制作中赤ちゃんの本物イラスト） -->
             <div class="item-card">
                 <div class="item-img-box">
-                    <!-- 💡 制作中赤ちゃんイラスト（カメラ＆のぞき見）の表現 -->
-                    <svg class="item-illustration" viewBox="0 0 100 100" style="width:90px;height:90px;">
-                        <circle cx="45" cy="42" r="24" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-                        <circle cx="18" cy="45" r="6" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-                        <circle cx="34" cy="41" r="2" fill="#5c4033"/>
-                        <circle cx="56" cy="41" r="2" fill="#5c4033"/>
-                        <ellipse cx="28" cy="46" rx="4" ry="2" fill="#f3a3b2" opacity="0.6"/>
-                        <ellipse cx="62" cy="46" rx="4" ry="2" fill="#f3a3b2" opacity="0.6"/>
-                        <!-- カメラ -->
-                        <rect x="35" y="48" width="30" height="20" rx="3" fill="#b0c4de" stroke="#4a4a4a" stroke-width="1.5"/>
-                        <circle cx="50" cy="58" r="6" fill="#778899" stroke="#4a4a4a" stroke-width="1.2"/>
-                        <circle cx="50" cy="58" r="3" fill="#fff"/>
-                        <rect x="40" y="44" width="8" height="4" fill="#778899" stroke="#4a4a4a" stroke-width="1"/>
-                        <!-- 手 -->
-                        <circle cx="32" cy="54" r="3" fill="#fbe3e6" stroke="#d47a82" stroke-width="1"/>
-                        <circle cx="68" cy="54" r="3" fill="#fbe3e6" stroke="#d47a82" stroke-width="1"/>
-                        <!-- 丸型プレビュー枠 -->
-                        <circle cx="75" cy="40" r="15" fill="#fff" stroke="#d47a82" stroke-width="2"/>
-                        <line x1="68" y1="46" x2="63" y2="48" stroke="#d47a82" stroke-width="1.5"/>
-                        <!-- 体 -->
-                        <path d="M 28 64 Q 18 75 22 82 Q 45 88 68 82 Q 72 75 62 64" fill="#e0bfb5" stroke="#d47a82" stroke-width="1.2"/>
-                        <text x="36" y="80" font-size="5" fill="#8c6239" font-weight="bold">bebibebi</text>
-                    </svg>
-                    アクリルスタンド
+                    <div class="baby-illust illust-making"></div>
+                    <span>アクリルスタンド</span>
                 </div>
                 <div class="item-info">
                     <h3>アクリルスタンド</h3>
@@ -510,25 +485,11 @@
                 </div>
             </div>
 
-            <!-- アクキー（お出迎え赤ちゃん） -->
+            <!-- アクキー（⑤バンザイ赤ちゃんの本物イラスト） -->
             <div class="item-card">
                 <div class="item-img-box">
-                    <svg class="item-illustration" viewBox="0 0 100 100" style="width:90px;height:90px;">
-                        <circle cx="50" cy="45" r="24" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-                        <circle cx="23" cy="48" r="6" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-                        <circle cx="77" cy="48" r="6" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-                        <circle cx="41" cy="44" r="2" fill="#5c4033"/>
-                        <circle cx="59" cy="44" r="2" fill="#5c4033"/>
-                        <ellipse cx="34" cy="48" rx="4" ry="2" fill="#f3a3b2" opacity="0.6"/>
-                        <ellipse cx="66" cy="48" rx="4" ry="2" fill="#f3a3b2" opacity="0.6"/>
-                        <path d="M 45 51 Q 50 55 55 51" stroke="#d47a82" stroke-width="1.5" fill="#fff"/>
-                        <path d="M 33 66 C 33 78, 67 78, 67 66" fill="#fff" stroke="#d47a82" stroke-width="1"/>
-                        <path d="M 68 45 Q 78 32 80 35 Q 81 39 73 48" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.2"/>
-                        <path d="M 32 66 Q 24 76 28 83 Q 50 88 72 83 Q 76 76 68 66" fill="#f5b3b9" stroke="#d47a82" stroke-width="1.2"/>
-                        <circle cx="28" cy="81" r="4" fill="#fbe3e6" stroke="#d47a82" stroke-width="1"/>
-                        <circle cx="72" cy="81" r="4" fill="#fbe3e6" stroke="#d47a82" stroke-width="1"/>
-                    </svg>
-                    アクリルキーホルダー
+                    <div class="baby-illust illust-banzai"></div>
+                    <span>アクリルキーホルダー</span>
                 </div>
                 <div class="item-info">
                     <h3>アクリルキーホルダー</h3>
@@ -540,33 +501,11 @@
                 </div>
             </div>
 
-            <!-- ステッカー（ギフト赤ちゃん） -->
+            <!-- ステッカー（③ギフト赤ちゃんの本物イラスト） -->
             <div class="item-card">
                 <div class="item-img-box">
-                    <!-- 💡 ギフト赤ちゃんイラストの表現 -->
-                    <svg class="item-illustration" viewBox="0 0 100 100" style="width:90px;height:90px;">
-                        <circle cx="50" cy="42" r="23" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-                        <circle cx="25" cy="45" r="5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-                        <circle cx="75" cy="45" r="5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-                        <circle cx="42" cy="42" r="2" fill="#5c4033"/>
-                        <circle cx="58" cy="42" r="2" fill="#5c4033"/>
-                        <ellipse cx="35" cy="46" rx="4" ry="2" fill="#f3a3b2" opacity="0.6"/>
-                        <ellipse cx="65" cy="46" rx="4" ry="2" fill="#f3a3b2" opacity="0.6"/>
-                        <path d="M 46 49 Q 50 53 54 49" stroke="#d47a82" stroke-width="1.5" fill="#fff"/>
-                        <path d="M 35 62 C 35 72, 65 72, 65 62" fill="#fff" stroke="#d47a82" stroke-width="1"/>
-                        <!-- ギフトボックス -->
-                        <rect x="35" y="58" width="30" height="24" rx="2" fill="#ffe4b5" stroke="#8c6239" stroke-width="1.5"/>
-                        <rect x="33" y="55" width="34" height="6" rx="1" fill="#fcdbb0" stroke="#8c6239" stroke-width="1.5"/>
-                        <!-- リボン -->
-                        <path d="M 50 55 L 50 82 M 35 68 L 65 68" stroke="#ff6b6b" stroke-width="2"/>
-                        <path d="M 50 55 C 45 45, 38 48, 50 55 C 55 45, 62 48, 50 55" fill="#ff6b6b" stroke="#8c6239" stroke-width="1.2"/>
-                        <!-- 手（ギフトを抱える） -->
-                        <circle cx="34" cy="65" r="3.5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.2"/>
-                        <circle cx="66" cy="65" r="3.5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.2"/>
-                        <!-- 体 -->
-                        <path d="M 33 62 Q 22 74 26 81 H 74 Q 78 74 67 62" fill="#add8e6" stroke="#d47a82" stroke-width="1.2"/>
-                    </svg>
-                    カットステッカー
+                    <div class="baby-illust illust-gift"></div>
+                    <span>カットステッカー</span>
                 </div>
                 <div class="item-info">
                     <h3>カットステッカー</h3>
@@ -693,7 +632,7 @@
         </div>
     </div>
 
-    <!-- 安心・安全ポリシー（おやすみ赤ちゃんイラスト入り） -->
+    <!-- 安心・安全ポリシー（④おやすみ赤ちゃんの本物イラスト） -->
     <div class="section">
         <div class="security-section">
             <div class="security-box">
@@ -704,47 +643,12 @@
                     <li><strong>ギフト対応・直送OK:</strong> ご自宅用はもちろん、離れて暮らすおじいちゃん・おばあちゃんへのプレゼントにも安心してご利用いただけます。</li>
                 </ul>
             </div>
-            <!-- 💡 採用されたおやすみ赤ちゃんイラスト -->
-            <svg class="security-illustration" viewBox="0 0 100 100" style="width:120px;height:120px;">
-                <rect x="18" y="45" width="64" height="40" rx="6" fill="#fff" stroke="#d47a82" stroke-width="1"/>
-                <path d="M 18 62 H 82" stroke="#d47a82" stroke-dasharray="3,3"/>
-                <!-- 枕 -->
-                <rect x="22" y="32" width="22" height="15" rx="3" fill="#faf0e6" stroke="#d47a82" stroke-width="1"/>
-                <!-- 赤ちゃん（横向きでおやすみ） -->
-                <circle cx="46" cy="40" r="15" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.2"/>
-                <path d="M 41 42 Q 43 45 45 42 M 50 42 Q 52 45 54 42" stroke="#5c4033" stroke-width="1" fill="none"/>
-                <!-- おてて -->
-                <circle cx="34" cy="47" r="2.5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1"/>
-                <!-- お布団 -->
-                <path d="M 18 52 C 18 52, 45 46, 82 52 L 82 85 H 18 Z" fill="#ffe4e1" stroke="#d47a82" stroke-width="1.5"/>
-                <!-- 星とハートの装飾 -->
-                <path d="M 10 32 L 12 35 L 15 35 L 13 37 L 14 40 L 11 38 L 8 40 L 9 37 L 7 35 L 10 35 Z" fill="#f0ad4e"/>
-                <path d="M 85 32 L 87 35 L 90 35 L 88 37 L 89 40 L 86 38 L 83 40 L 84 37 L 82 35 L 85 35 Z" fill="#f0ad4e"/>
-                <path d="M 15 50 Q 12 45, 15 42 Q 18 45, 15 50" fill="#ff6b6b"/>
-            </svg>
+            <div class="baby-illust illust-sleep"></div>
         </div>
     </div>
 
     <footer>
-        <!-- 💡 採用されたバンザイ赤ちゃんイラスト -->
-        <svg class="footer-illustration" viewBox="0 0 100 100" style="width:60px;height:60px;display:block;margin:0 auto 10px auto;">
-            <circle cx="50" cy="50" r="23" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-            <circle cx="23" cy="53" r="5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-            <circle cx="77" cy="53" r="5" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.5"/>
-            <circle cx="42" cy="48" r="2" fill="#5c4033"/>
-            <circle cx="58" cy="48" r="2" fill="#5c4033"/>
-            <ellipse cx="35" cy="52" rx="4" ry="2" fill="#f3a3b2" opacity="0.6"/>
-            <ellipse cx="65" cy="52" rx="4" ry="2" fill="#f3a3b2" opacity="0.6"/>
-            <path d="M 45 55 Q 50 60 55 55" stroke="#d47a82" stroke-width="1.5" fill="#fff"/>
-            <path d="M 33 68 C 33 80, 67 80, 67 68" fill="#fff" stroke="#d47a82" stroke-width="1.2"/>
-            <!-- バンザイ手 -->
-            <path d="M 23 48 Q 14 36 11 38 Q 11 44 20 54" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.2"/>
-            <path d="M 77 48 Q 86 36 89 38 Q 89 44 80 54" fill="#fbe3e6" stroke="#d47a82" stroke-width="1.2"/>
-            <!-- キラキラ -->
-            <path d="M 12 25 L 14 27 M 14 25 L 12 27" stroke="#f0ad4e" stroke-width="1"/>
-            <path d="M 88 25 L 86 27 M 86 25 L 88 27" stroke="#f0ad4e" stroke-width="1"/>
-            <path d="M 33 70 Q 22 80 26 87 H 74 Q 78 80 67 70" fill="#f5b3b9" stroke="#d47a82" stroke-width="1.2"/>
-        </svg>
+        <div class="baby-illust illust-banzai" style="width: 80px; height: 80px; margin-bottom: 10px;"></div>
         <p>&copy; 2026 べびべび All Rights Reserved.</p>
     </footer>
 
