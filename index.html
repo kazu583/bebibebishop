@@ -17,63 +17,66 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #f4c2c6; /* アクセントライン */
         }
         h1 {
-            color: #e08b91;
+            color: #d47a82;
             margin: 0;
-            font-size: 26px;
-            letter-spacing: 1px;
+            font-size: 28px;
+            letter-spacing: 1.5px;
         }
         /* メインバナー（ヒーローエリア） */
         .hero-banner {
-            background: linear-gradient(135deg, #fdf6f6 0%, #f9f0f2 100%);
-            padding: 60px 20px;
+            background: linear-gradient(135deg, #fdf4f5 0%, #fae1e4 100%);
+            padding: 70px 20px;
             text-align: center;
-            border-bottom: 1px solid #fae8eb;
+            border-bottom: 1px solid #f2d6d9;
         }
         .hero-banner h2 {
-            font-size: 26px;
-            color: #4a4a4a;
-            margin-bottom: 10px;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 12px;
         }
         .hero-banner p {
-            color: #777;
-            font-size: 15px;
-            margin-bottom: 25px;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
         }
         .btn-main {
             display: inline-block;
-            background-color: #e08b91;
+            background: linear-gradient(135deg, #d47a82 0%, #e08b91 100%);
             color: white;
-            padding: 15px 45px;
+            padding: 16px 48px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            box-shadow: 0 4px 12px rgba(224, 139, 145, 0.3);
+            box-shadow: 0 6px 15px rgba(212, 122, 130, 0.35);
             transition: 0.2s;
         }
         .btn-main:hover {
-            background-color: #d07a80;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 122, 130, 0.45);
         }
-        /* お知らせ（News）バー */
+        /* お知らせバー */
         .news-ticker {
             background: #fff;
-            max-width: 800px;
-            margin: -20px auto 30px auto;
-            padding: 12px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            max-width: 840px;
+            margin: -22px auto 40px auto;
+            padding: 14px 22px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
             font-size: 13px;
             position: relative;
             z-index: 2;
+            border-left: 4px solid #d47a82; /* アクセント */
         }
         .news-badge {
-            background: #e08b91;
+            background: #d47a82;
             color: white;
-            padding: 2px 8px;
+            padding: 3px 9px;
             border-radius: 4px;
             font-size: 11px;
             margin-right: 12px;
@@ -84,31 +87,31 @@
         }
         .section {
             max-width: 960px;
-            margin: 50px auto;
+            margin: 60px auto;
             padding: 0 20px;
         }
         .section-tag {
             font-size: 11px;
-            color: #888;
-            letter-spacing: 1.5px;
+            color: #d47a82;
+            letter-spacing: 2px;
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 5px;
         }
         .section-title {
             text-align: left;
-            font-size: 22px;
-            color: #4a4a4a;
+            font-size: 24px;
+            color: #333;
             margin-bottom: 5px;
         }
         .section-subtitle {
             text-align: left;
             font-size: 13px;
             color: #777;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         
-        /* しまうまプラス風 商品グリッド（3カラム） */
+        /* 人気アイテム */
         .items-grid {
             display: flex;
             justify-content: space-between;
@@ -117,34 +120,40 @@
         }
         .item-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 14px;
             width: 300px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: left;
             transition: transform 0.2s;
+            border: 1px solid #fae8eb;
         }
         .item-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
         .item-img-placeholder {
-            height: 180px;
-            background: #f4eaebe8;
+            height: 190px;
+            background: linear-gradient(135deg, #fce4e6 0%, #f4d0d4 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #d07a80;
+            color: #b05860;
             font-size: 14px;
             font-weight: bold;
-            border-bottom: 1px solid #fae8eb;
+            position: relative;
+        }
+        .item-img-placeholder span {
+            font-size: 32px;
+            margin-bottom: 5px;
         }
         .item-info {
-            padding: 18px;
+            padding: 20px;
         }
         .item-info h3 {
             margin: 0 0 8px 0;
             font-size: 17px;
-            color: #4a4a4a;
+            color: #333;
         }
         .item-price-row {
             display: flex;
@@ -153,9 +162,9 @@
             margin-bottom: 10px;
         }
         .item-price {
-            color: #e08b91;
+            color: #d47a82;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 19px;
         }
         .item-price span {
             font-size: 12px;
@@ -166,15 +175,15 @@
             font-size: 12px;
             color: #666;
             line-height: 1.5;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
         .item-btn {
             display: block;
             text-align: center;
             background-color: #fff;
-            color: #e08b91;
-            border: 2px solid #e08b91;
-            padding: 8px 0;
+            color: #d47a82;
+            border: 2px solid #d47a82;
+            padding: 9px 0;
             border-radius: 20px;
             text-decoration: none;
             font-size: 14px;
@@ -182,11 +191,11 @@
             transition: 0.2s;
         }
         .item-btn:hover {
-            background-color: #e08b91;
+            background-color: #d47a82;
             color: white;
         }
 
-        /* 完成サンプル・作例ギャラリー */
+        /* 作例ギャラリー */
         .gallery-grid {
             display: flex;
             justify-content: space-between;
@@ -195,35 +204,41 @@
         }
         .gallery-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 14px;
             width: 300px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: left;
+            border: 1px solid #fae8eb;
         }
         .gallery-img-box {
-            height: 160px;
-            background: #faf2f3;
+            height: 170px;
+            background: linear-gradient(135deg, #fff0f1 0%, #fce8ea 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #d07a80;
-            font-size: 13px;
+            color: #b05860;
+            font-size: 14px;
             font-weight: bold;
         }
+        .gallery-img-box span {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
         .gallery-content {
-            padding: 15px;
+            padding: 18px;
         }
         .gallery-content h4 {
-            margin: 0 0 5px 0;
-            font-size: 15px;
-            color: #4a4a4a;
+            margin: 0 0 6px 0;
+            font-size: 16px;
+            color: #333;
         }
         .gallery-content p {
             margin: 0;
             font-size: 12px;
             color: #666;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         /* ご注文の流れ */
@@ -235,33 +250,34 @@
         }
         .step-card {
             background: white;
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 14px;
+            padding: 22px;
             width: 205px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #fae8eb;
         }
         .step-number {
             display: inline-block;
-            background-color: #e08b91;
+            background-color: #d47a82;
             color: white;
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             font-size: 14px;
-            line-height: 28px;
+            line-height: 30px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .step-card h3 {
             font-size: 15px;
             margin: 5px 0 10px;
-            color: #4a4a4a;
+            color: #333;
         }
         .step-card p {
             font-size: 12px;
             color: #666;
-            line-height: 1.4;
+            line-height: 1.5;
             margin: 0;
         }
 
@@ -274,11 +290,12 @@
         }
         .review-card {
             background: white;
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 14px;
+            padding: 22px;
             width: 280px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             text-align: left;
+            border: 1px solid #fae8eb;
         }
         .review-star {
             color: #f39c12;
@@ -288,8 +305,8 @@
         .review-text {
             font-size: 13px;
             color: #555;
-            line-height: 1.5;
-            margin-bottom: 12px;
+            line-height: 1.6;
+            margin-bottom: 14px;
         }
         .review-author {
             font-size: 12px;
@@ -301,42 +318,43 @@
         /* FAQ */
         .faq-container {
             background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #fae8eb;
         }
         .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
+            border-bottom: 1px solid #f2d6d9;
+            padding: 16px 0;
         }
         .faq-item:last-child {
             border-bottom: none;
         }
         .faq-q {
             font-weight: bold;
-            color: #4a4a4a;
+            color: #333;
             font-size: 14px;
             margin-bottom: 6px;
         }
         .faq-a {
             font-size: 13px;
             color: #666;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* 安心ポリシー */
         .security-box {
-            background: #fff8f8;
-            border: 2px dashed #e08b91;
-            border-radius: 12px;
-            padding: 30px;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff9f9 100%);
+            border: 2px dashed #d47a82;
+            border-radius: 14px;
+            padding: 35px;
             text-align: left;
         }
         .security-box h3 {
-            color: #e08b91;
-            font-size: 18px;
+            color: #d47a82;
+            font-size: 19px;
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             text-align: center;
         }
         .security-list {
@@ -347,14 +365,14 @@
         .security-list li {
             font-size: 14px;
             color: #555;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             line-height: 1.6;
             position: relative;
-            padding-left: 20px;
+            padding-left: 22px;
         }
         .security-list li::before {
             content: "✓";
-            color: #e08b91;
+            color: #d47a82;
             font-weight: bold;
             position: absolute;
             left: 0;
@@ -363,10 +381,11 @@
         footer {
             background-color: #f5f0f0;
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             font-size: 12px;
             color: #888;
-            margin-top: 60px;
+            margin-top: 70px;
+            border-top: 1px solid #e8dedf;
         }
     </style>
 </head>
@@ -389,7 +408,7 @@
         <span class="news-text">【期間限定】お名前入れ無料キャンペーン実施中！祖父母へのギフトラッピングも対応開始しました。</span>
     </div>
 
-    <!-- 人気アイテム（しまうまプラス風レイアウト） -->
+    <!-- 人気アイテム -->
     <div class="section">
         <div class="section-tag">POPULAR</div>
         <h2 class="section-title">人気アイテム</h2>
@@ -398,7 +417,10 @@
         <div class="items-grid">
             <!-- アクスタ -->
             <div class="item-card">
-                <div class="item-img-placeholder"> stand photo</div>
+                <div class="item-img-placeholder">
+                    <span>🧸</span>
+                    アクリルスタンド
+                </div>
                 <div class="item-info">
                     <h3>アクリルスタンド</h3>
                     <div class="item-price-row">
@@ -411,7 +433,10 @@
 
             <!-- アクキー -->
             <div class="item-card">
-                <div class="item-img-placeholder"> keychain photo</div>
+                <div class="item-img-placeholder">
+                    <span>👶</span>
+                    アクリルキーホルダー
+                </div>
                 <div class="item-info">
                     <h3>アクリルキーホルダー</h3>
                     <div class="item-price-row">
@@ -424,7 +449,10 @@
 
             <!-- ステッカー -->
             <div class="item-card">
-                <div class="item-img-placeholder"> sticker photo</div>
+                <div class="item-img-placeholder">
+                    <span>⭐</span>
+                    カットステッカー
+                </div>
                 <div class="item-info">
                     <h3>カットステッカー</h3>
                     <div class="item-price-row">
@@ -444,24 +472,33 @@
         <p class="section-subtitle">先輩ママ・パパが作った、かわいいグッズたち</p>
         <div class="gallery-grid">
             <div class="gallery-card">
-                <div class="gallery-img-box">✨ お出かけアクキー</div>
+                <div class="gallery-img-box">
+                    <span>🔑</span>
+                    お出かけ用キーホルダー
+                </div>
                 <div class="gallery-content">
-                    <h4>キーホルダー</h4>
-                    <p>車のカギに付けて毎日癒やされています。名前入りで特別感バツグン！</p>
+                    <h4>車のカギにつけて</h4>
+                    <p>毎日持ち歩くカギに付けて癒やされています。名前入りで特別感バツグン！</p>
                 </div>
             </div>
             <div class="gallery-card">
-                <div class="gallery-img-box">🌸 祖父母へのギフト</div>
+                <div class="gallery-img-box">
+                    <span>🎁</span>
+                    祖父母へのプレゼント
+                </div>
                 <div class="gallery-content">
-                    <h4>アクリルスタンド</h4>
-                    <p>敬老の日に実家の両親へプレゼント。リビングに飾って大喜びされました。</p>
+                    <h4>実家のご両親へ</h4>
+                    <p>敬老の日にプレゼント。リビングに飾って毎日孫の顔が見えると大喜びされました。</p>
                 </div>
             </div>
             <div class="gallery-card">
-                <div class="gallery-img-box">💧 保育園の持ち物に</div>
+                <div class="gallery-img-box">
+                    <span>🍼</span>
+                    保育園グッズの目印
+                </div>
                 <div class="gallery-content">
-                    <h4>耐水カットステッカー</h4>
-                    <p>水筒に貼っても全然剥がれなくて可愛い！持ち物の目印に大活躍です。</p>
+                    <h4>マグや水筒にペタッ</h4>
+                    <p>耐水ステッカーを水筒に貼りました。子供も自分の名前と写真ですぐ分かるお気に入り！</p>
                 </div>
             </div>
         </div>
@@ -514,7 +551,7 @@
             </div>
             <div class="review-card">
                 <div class="review-star">★★★★★</div>
-                <p class="review-text">「耐水ステッカーを水筒に貼りました。子供も自分の名前と写真ですごく気に入っています！」</p>
+                <p class="review-text">「耐水ステッカーを水筒に貼りました。子供も自分の名前と写真ですぐ気に入っています！」</p>
                 <div class="review-author">（埼玉県・T様ママ）</div>
             </div>
         </div>
